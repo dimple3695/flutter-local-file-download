@@ -6,8 +6,10 @@ Working in Android SDK 29 & 30.
 
 Dart 3.0 is compatible.
 
-## 1. Add in manifest file
+## 1. Android 
 If you are targeting Android 11 (targetSdkVersion 30) then you require the following permissions in AndroidManifest.xml for modifying and document access.
+Located in ``` <project root>/android/app/src/main/AndroidManifest.xml ```
+   
 ```
 <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -17,6 +19,14 @@ If you are targeting Android 11 (targetSdkVersion 30) then you require the follo
  ```
  android:requestLegacyExternalStorage="true"
 ```
+## 2. iOS
+Add in Info.plist file. Located in ``` <project root>/ios/Runner/Info.plist ```
+
+``` 
+<key>UISupportsDocumentBrowser</key>
+<true/>
+```
+
 
 ## 2. Add a package for asking permission in pubspec.yaml
 ```
